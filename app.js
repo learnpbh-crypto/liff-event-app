@@ -1,5 +1,5 @@
 const LIFF_ID = "2009684619-bB9WmZCU"; // あなたの LIFF ID
-const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWFhsZW4mSpGBNNiDqBP2zWYq282ViJvtcnXj_qRVNYYvuqGyZgJorCfeMSCZvQCNYHA/exec"; // 新しい exec URL に置き換え
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzHJZpJa4yw_t1yEeUK5TxKe_nUQPdJmgWVJ76rQ7j0HiPn9tJYu9kGawiyOq4IhAmmYQ/exec"; // 新しい exec URL に置き換え
 
 async function init() {
   try {
