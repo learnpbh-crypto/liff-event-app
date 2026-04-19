@@ -1,5 +1,5 @@
 const LIFF_ID = "2009684619-bB9WmZCU";
-const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbw7rYxjjW0IWMhnqlDOClFu35shx123kYLdG_Pp-aZ9P3GcTuRVHMhSLDpECE8bdEa5fw/exec";
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwNYtLdyJzEWmBxuBw13CB__kXbVI626-w6RHolr5GCBgtnTkhU4k20JW6YsbsvDF5Ppg/exec";
 
 async function init() {
   await liff.init({ liffId: LIFF_ID });
