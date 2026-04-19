@@ -1,29 +1,18 @@
-const LIFF_ID = "2009684619-bB9WmZCU"; // あなたの LIFF ID
-const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzHJZpJa4yw_t1yEeUK5TxKe_nUQPdJmgWVJ76rQ7j0HiPn9tJYu9kGawiyOq4IhAmmYQ/exec"; // 新しい exec URL に置き換え
+const LIFF_ID = "2009684619-bB9WmZCU";
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbw2cuKvELQMJNc05dugyKEh-HK00ZFHNF-vYQ3XLtYvxVaL5nJU8uFo0q_hz2MRGukZaw/exec";
 
 async function init() {
-  try {
-    await liff.init({ liffId: LIFF_ID });
+  await liff.init({ liffId: LIFF_ID });
 
-    if (!liff.isLoggedIn()) {
-      liff.login();
-      return;
-    }
-
-    document.getElementById("app").innerText = "LIFF Loaded OK";
-
-    const context = liff.getContext();
-    const urlParams = new URLSearchParams(location.search);
-    const eventId = urlParams.get("event_id") || "E0001";
-
-    // 例：イベント詳細を取得して表示
-    const detail = await callGAS("getEventDetail", { event_id: eventId });
-    document.getElementById("app").innerText =
-      `${detail.title}\n${detail.date}\n${detail.place}`;
-  } catch (e) {
-    console.error(e);
-    document.getElementById("app").innerText = "Error: " + e.message;
+  if (!liff.isLoggedIn()) {
+    liff.login();
+    return;
   }
+
+  document.getElementById("app").innerText = "LIFF Loaded OK";
+
+  const detail = await callGAS("getEventDetail", { event_id: "E0001" });
+  document.getElementById("app").innerText = JSON.stringify(detail, null, 2);
 }
 
 async function callGAS(action, payload) {
